@@ -22,13 +22,13 @@ let question = {
   }
 }
 
-let questions = [question, question, question, question, question];
+
 
 function App() {
   return (
     <div className="App">
       <h2>{question.heading}</h2>
-      <Options />
+      <Options question={question} />
     </div>
   );
 }

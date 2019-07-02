@@ -2,32 +2,25 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+/*//////// Options Styling //////////*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.options-div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 5rem;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.answer-div {
+  border-radius: 100px;
+  border: 1px solid black;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.answer {
+  padding: 5px;
+  border-radius: 100px;
 }
+
