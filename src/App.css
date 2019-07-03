@@ -6,7 +6,7 @@
 
 .options-div {
   display: flex;
-  justify-content: center;
+  align-items: center;
   margin-top: 5rem;
   flex-direction: column;
 }
@@ -17,10 +17,26 @@
   width: 500px;
   display: flex;
   justify-content: space-around;
+  margin: 10px;
+}
+
+.answer3 {
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .answer {
-  padding: 5px;
+  padding: 5px 0;
   border-radius: 100px;
+  width: 250px;
 }
 
+.highlighted {
+  color: blue;
+  background-color: yellow;
+}
+
+.non-highlighted {
+  color: black;
+  background-color: white;
+}
