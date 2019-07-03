@@ -6,7 +6,7 @@ class Options extends Component {
         super(props);
         this.state = {
             answer1WrongActive: false,
-            answer1Correct: 'non-highlighted',
+            answer1CorrectActive: true,
             answer2Wrong: 'non-highlighted',
             answer2Correct: 'highlighted',
             answer3Wrong: 'non-highlighted',
@@ -14,22 +14,24 @@ class Options extends Component {
             answer4Wrong: 'highlighted',
             answer4Correct: 'non-highlighted',
         };
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClickAnswer1 = this.handleClickAnswer1.bind(this)
     }
 
-    handleClick() {
-        const currentState = this.state.answer1WrongActive;
-        this.setState({answer1WrongActive: !currentState});
+    handleClickAnswer1() {
+        const currentStateAnswer1Wrong = this.state.answer1WrongActive;
+        const currentStateAnswer1Correct = this.state.answer1CorrectActive;
+        this.setState({answer1WrongActive: !currentStateAnswer1Wrong});
+        this.setState({answer1CorrectActive: ! currentStateAnswer1Correct})
     };
 
     render() {
         return(
             <div className='options-div'>
                 <div className='answer-div'>
-                    <div className={this.state.answer1WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClick}>
-                        <div className='answer answer1 answer3'>{this.props.question.answer1.correctAnswer}</div>
+                    <div className={this.state.answer1WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer1}>
+                        <div className='answer'>{this.props.question.answer1.correctAnswer}</div>
                     </div>
-                    <div >
+                    <div className={this.state.answer1CorrectActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer1}>
                         <div className='answer answer2'>{this.props.question.answer1.wrongAnswer}</div>
                     </div>
                 </div>
