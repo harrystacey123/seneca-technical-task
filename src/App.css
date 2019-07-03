@@ -1,6 +1,32 @@
+* {
+  font-family: 'PT Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
+
+.question-heading {
+  margin: 0;
+  padding-top: 20px;
+  color: white;
+  text-shadow: 0.5px 0.5px 0.8px #000000;
+}
+
+.incorrect-answer-background {
+  background-image: url(./images/incorrect-answer-background.jpg);
+}
+
+.correct-answer-background {
+  background-image: url(./images/correct-answer-background.jpg);
+}
+
+.result {
+  color: white;
+  padding: 20px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
 
 /*//////// Options Styling //////////*/
 
@@ -13,33 +39,33 @@
 
 .answer-div {
   border-radius: 100px;
-  border: 1px solid black;
+  border: 1px solid white;
   width: 500px;
   display: flex;
   justify-content: space-around;
   margin: 10px;
 }
 
-.answer3 {
-
-}
-
 .answer {
-  padding: 10px 0;
+  padding: 15px 0;
   border-radius: 100px;
   width: 250px;
+  font-size: 17px;
 }
 
 .highlighted {
-  color: blue;
-  background-color: yellow;
-  border: 1px solid black;
+  color: rgb(70, 70, 70);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 100px;
   width: 250px;;
+  text-shadow: 0.1px 0.1px 0.2px #000000;
+  font-weight: 550;
+  letter-spacing: 0.8px;
 }
 
 .non-highlighted {
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: transparent;
 }

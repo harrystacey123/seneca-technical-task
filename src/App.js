@@ -33,10 +33,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h2>{question.heading}</h2>
+      <div className="App incorrect-answer-background">
+        <h2 className='question-heading'>{question.heading}</h2>
         <Options question={question} />
-        <h3>The answer is <span>{this.state.isCorrect ? 'correct' : 'incorrect'}</span></h3>
       </div>
     );
   }
