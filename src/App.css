@@ -1,5 +1,11 @@
 * {
   font-family: 'PT Sans', sans-serif;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
 }
 
 .App {
