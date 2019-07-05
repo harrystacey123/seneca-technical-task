@@ -26,8 +26,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App incorrect-answer-background">
-        <h2 className='question-heading'>{question.heading}</h2>
+      <div className="App">
         <Options question={question} />
       </div>
     );

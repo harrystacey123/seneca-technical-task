@@ -19,7 +19,7 @@ class Options extends Component {
         this.handleClickAnswer2 = this.handleClickAnswer2.bind(this)
         this.handleClickAnswer3 = this.handleClickAnswer3.bind(this)
         this.handleClickAnswer4 = this.handleClickAnswer4.bind(this)
-        // this.handleIsCorrect = this.handleIsCorrect.bind(this);
+        this.handleIsCorrect = this.handleIsCorrect.bind(this);
 
     }
 
@@ -59,9 +59,18 @@ class Options extends Component {
         }
     }
 
+    handleCorrectBackground() {
+        if ((this.state.answer1CorrectActive && this.state.answer2CorrectActive && this.state.answer3CorrectActive && this.state.answer4CorrectActive) === true) {
+            return 'correct-answer-background options-div'
+        } else {
+            return 'incorrect-answer-background options-div'
+        }
+    }
+
     render() {
         return(
-            <div className='options-div'>
+            <div className={this.handleCorrectBackground()}>
+                <h2 className='question-heading'>{this.props.question.heading}</h2> 
                 <div className='answer-div'>
                     <div className={this.state.answer1CorrectActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer1}>
                         <a href='#'><div className='answer'>{this.props.question.answer1.correctAnswer}</div></a>
