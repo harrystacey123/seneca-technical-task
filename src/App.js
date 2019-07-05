@@ -24,13 +24,6 @@ let question = {
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isCorrect: false
-    }
-  }
-
   render() {
     return (
       <div className="App incorrect-answer-background">

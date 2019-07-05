@@ -13,12 +13,13 @@ class Options extends Component {
             answer3CorrectActive: false,
             answer4WrongActive: false,
             answer4CorrectActive: true,
-            isCorrect: false
+            isCorrect: true
         };
         this.handleClickAnswer1 = this.handleClickAnswer1.bind(this)
         this.handleClickAnswer2 = this.handleClickAnswer2.bind(this)
         this.handleClickAnswer3 = this.handleClickAnswer3.bind(this)
         this.handleClickAnswer4 = this.handleClickAnswer4.bind(this)
+        // this.handleIsCorrect = this.handleIsCorrect.bind(this);
     }
 
     handleClickAnswer1() {
@@ -49,45 +50,47 @@ class Options extends Component {
         this.setState({answer4CorrectActive: ! currentStateAnswer4Correct})
     };
 
-    handleIsCorrect() {
-        if (this.state.answer1CorrectActive === true) {
-            this.setState({ isCorrect: true});
-        };
-    };
 
     render() {
+
+        if (this.state.answer1CorrectActive === true) {
+            this.setState({
+                isCorrect: true
+            })
+        }
+
         return(
             <div className='options-div'>
                 <div className='answer-div'>
-                    <div className={this.state.answer1WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer1}>
-                        <div className='answer'>{this.props.question.answer1.wrongAnswer}</div>
-                    </div>
                     <div className={this.state.answer1CorrectActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer1}>
-                        <div className='answer'>{this.props.question.answer1.correctAnswer}</div>
+                        <div className='answer'><a>{this.props.question.answer1.correctAnswer}</a></div>
+                    </div>
+                    <div className={this.state.answer1WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer1}>
+                        <div className='answer'><a>{this.props.question.answer1.wrongAnswer}</a></div>
                     </div>
                 </div>
                 <div className='answer-div'>
                     <div className={this.state.answer2WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer2}>
-                        <div className='answer'>{this.props.question.answer2.wrongAnswer}</div>
+                        <div className='answer'><a>{this.props.question.answer2.wrongAnswer}</a></div>
                     </div>
                     <div className={this.state.answer2CorrectActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer2}>
-                        <div className='answer'>{this.props.question.answer2.correctAnswer}</div>
+                        <div className='answer'><a>{this.props.question.answer2.correctAnswer}</a></div>
                     </div>
                 </div>
                 <div className='answer-div'>
                     <div className={this.state.answer3WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer3}>
-                        <div className='answer'>{this.props.question.answer3.wrongAnswer}</div>
+                        <div className='answer'><a>{this.props.question.answer3.wrongAnswer}</a></div>
                     </div>
                     <div className={this.state.answer3CorrectActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer3}>
-                        <div className='answer'>{this.props.question.answer3.correctAnswer}</div>
+                        <div className='answer'><a>{this.props.question.answer3.correctAnswer}</a></div>
                     </div>
                 </div>
                 <div className='answer-div'>
-                    <div className={this.state.answer4WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer4}>
-                        <div className='answer'>{this.props.question.answer4.wrongAnswer}</div>
-                    </div>
                     <div className={this.state.answer4CorrectActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer4}>
-                        <div className='answer'>{this.props.question.answer4.correctAnswer}</div>
+                        <div className='answer'><a>{this.props.question.answer4.correctAnswer}</a></div>
+                    </div>
+                    <div className={this.state.answer4WrongActive ? 'highlighted' : 'non-highlighted'} onClick={this.handleClickAnswer4}>
+                        <div className='answer'><a>{this.props.question.answer4.wrongAnswer}</a></div>
                     </div>
                 </div>
                 <h3 className='result'>The answer is <span>{this.state.isCorrect ? 'correct' : 'incorrect'}</span></h3>

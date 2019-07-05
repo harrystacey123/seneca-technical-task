@@ -44,6 +44,7 @@
   display: flex;
   justify-content: space-around;
   margin: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .answer {
@@ -65,7 +66,18 @@
   letter-spacing: 0.8px;
 }
 
-.non-highlighted {
+.non-highlighted div {
   color: white;
-  background-color: transparent;
+}
+
+@media only screen and (max-width: 520px) {
+  .answer-div {
+    width: 310px;
+  }
+  .answer {
+    width: 155px
+  }
+  .highlighted {
+    letter-spacing: 0.5px;
+  }
 }
