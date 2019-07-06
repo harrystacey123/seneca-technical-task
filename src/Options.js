@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Options extends Component {
+
+    static propTypes = {
+        question: PropTypes.object.isRequired,
+    
+    }
 
     constructor(props) {
         super(props);
@@ -13,7 +19,7 @@ class Options extends Component {
             answer3CorrectActive: false,
             answer4WrongActive: false,
             answer4CorrectActive: true,
-            isCorrect: false
+            isCorrect: false,
         };
         this.handleClickAnswer1 = this.handleClickAnswer1.bind(this)
         this.handleClickAnswer2 = this.handleClickAnswer2.bind(this)
@@ -66,6 +72,8 @@ class Options extends Component {
             return 'incorrect-answer-background options-div'
         }
     }
+
+
 
     render() {
         return(
